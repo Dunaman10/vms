@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         // Create an initial region directly
         $region = Region::create([
             'region_name' => 'Kantor Pusat',
-            'type' => RegionType::Hq,
+            'type' => RegionType::KantorPusat,
         ]);
 
         // Create initial user directly without using factories
