@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('licenses_plate', 100);
             $table->string('type');
             $table->string('ownership');
-            $table->float('fuel_consumtion_rate');
+            $table->float('fuel_consumption_rate');
             $table->timestamps();
         });
     }

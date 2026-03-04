@@ -11,49 +11,49 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Vehicle extends Model
 {
-  use HasFactory;
+    use HasFactory;
 
-  /**
-   * @var list<string>
-   */
-  protected $fillable = [
-    'region_id',
-    'vehicle_name',
-    'licenses_plate',
-    'type',
-    'ownership',
-    'fuel_consumption_rate',
-  ];
-
-  /**
-   * @return array<string, string>
-   */
-  protected function casts(): array
-  {
-    return [
-      'type' => VehicleType::class,
-      'ownership' => VehicleOwnership::class,
-      'fuel_consumtion_rate' => 'float',
+    /**
+     * @var list<string>
+     */
+    protected $fillable = [
+        'region_id',
+        'vehicle_name',
+        'licenses_plate',
+        'type',
+        'ownership',
+        'fuel_consumption_rate',
     ];
-  }
 
-  public function region(): BelongsTo
-  {
-    return $this->belongsTo(Region::class);
-  }
+    /**
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'type' => VehicleType::class,
+            'ownership' => VehicleOwnership::class,
+            'fuel_consumption_rate' => 'float',
+        ];
+    }
 
-  public function bookings(): HasMany
-  {
-    return $this->hasMany(Booking::class);
-  }
+    public function region(): BelongsTo
+    {
+        return $this->belongsTo(Region::class);
+    }
 
-  public function fuelLogs(): HasMany
-  {
-    return $this->hasMany(FuelLog::class);
-  }
+    public function bookings(): HasMany
+    {
+        return $this->hasMany(Booking::class);
+    }
 
-  public function serviceLogs(): HasMany
-  {
-    return $this->hasMany(ServiceLog::class);
-  }
+    public function fuelLogs(): HasMany
+    {
+        return $this->hasMany(FuelLog::class);
+    }
+
+    public function serviceLogs(): HasMany
+    {
+        return $this->hasMany(ServiceLog::class);
+    }
 }

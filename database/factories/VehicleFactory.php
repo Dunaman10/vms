@@ -23,7 +23,7 @@ class VehicleFactory extends Factory
             'licences_plate' => strtoupper(fake()->bothify('?? #### ??')),
             'type' => fake()->randomElement(VehicleType::cases()),
             'ownership' => fake()->randomElement(VehicleOwnership::cases()),
-            'fuel_consumtion_rate' => fake()->randomFloat(2, 5, 25),
+            'fuel_consumption_rate' => fake()->randomFloat(2, 5, 25),
         ];
     }
 }
