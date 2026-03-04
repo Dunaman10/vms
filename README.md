@@ -15,7 +15,7 @@ Aplikasi ini dikembangkan di atas arsitektur TALL Stack terkini dengan spesifika
 - **Filament PHP** v5 (Admin Panel & TALL Stack abstraction)
 - **Livewire** v3.x
 - **Tailwind CSS** v3/v4 (Custom styling)
-- **MySQL / Relational Database**
+- **MySQL / Relational Database** v8.0+
 
 ---
 
