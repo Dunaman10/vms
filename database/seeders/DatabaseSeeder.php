@@ -2,9 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Enums\RegionType;
+use App\Enums\UserRole;
+use App\Models\Region;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,10 +19,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Create an initial region directly
+        $region = Region::create([
+            'region_name' => 'Kantor Pusat',
+            'type' => RegionType::Hq,
+        ]);
 
-        User::factory()->approver()->create([
+        // Create initial user directly without using factories
+        User::create([
+            'region_id' => $region->id,
             'username' => 'testuser',
+            'password' => Hash::make('password'),
+            'role' => UserRole::Approver,
         ]);
     }
 }
