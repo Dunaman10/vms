@@ -28,9 +28,9 @@ class DatabaseSeeder extends Seeder
         // Create initial user directly without using factories
         User::create([
             'region_id' => $region->id,
-            'username' => 'testuser',
+            'username' => 'admin',
             'password' => Hash::make('password'),
-            'role' => UserRole::Approver,
+            'role' => UserRole::Admin,
         ]);
     }
 }
